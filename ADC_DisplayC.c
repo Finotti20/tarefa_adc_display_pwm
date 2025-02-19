@@ -29,6 +29,7 @@ static volatile uint32_t last_time_blue = 0;
 static volatile bool led_state = false;
 static volatile bool led_state_red = false;
 static volatile bool led_state_blue = false;
+static volatile bool border_style = false;
 
 static void gpio_irq_handler(uint gpio, uint32_t events);
 
@@ -100,6 +101,15 @@ int main() {
         rect_y = (vry_value * (HEIGHT - 8)) / 4095;
 
         ssd1306_fill(&ssd, false);
+        
+        // Desenha a borda no display com base no estilo
+        if (border_style) {
+            ssd1306_rect(&ssd, 0, 0, WIDTH, HEIGHT, true, true);
+        } else {
+            ssd1306_rect(&ssd, 0, 0, WIDTH, HEIGHT, true, false);
+        }
+
+        // Desenha o retângulo móvel
         ssd1306_rect(&ssd, rect_x, rect_y, 8, 8, true, false);
         ssd1306_send_data(&ssd);
 
@@ -134,6 +144,7 @@ void gpio_irq_handler(uint gpio, uint32_t events) {
             last_time = current_time;
             led_state = !led_state;
             gpio_put(LED3_PIN, led_state);
+            border_style = !border_style; // Alterna o estilo da borda
         }
     }
     
@@ -153,4 +164,5 @@ void gpio_irq_handler(uint gpio, uint32_t events) {
 
     gpio_acknowledge_irq(gpio, events);
 }
+
  
