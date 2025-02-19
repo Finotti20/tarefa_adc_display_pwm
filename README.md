@@ -41,4 +41,4 @@ Aguarda 100ms e repete
 
 **BUTTON_B** → Liga/desliga LED azul
 
-Vídeo explicativo: https://youtu.be/VH5nGM-DdCQ
+**Vídeo explicativo**: https://youtu.be/VH5nGM-DdCQ
