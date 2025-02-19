@@ -40,3 +40,5 @@ Aguarda 100ms e repete
 **BUTTON_A** → Liga/desliga LED vermelho
 
 **BUTTON_B** → Liga/desliga LED azul
+
+Vídeo explicativo: https://youtu.be/VH5nGM-DdCQ
