@@ -14,20 +14,29 @@
 1️⃣ **Inicialização**
 
 Configura **I2C** para o **display OLED**
+
 Configura **ADC** para ler **VRX** e **VRY**
+
 Configura **PWM** para os **LEDs**
+
 Configura **botões e interrupções**
 
 2️⃣ **Loop Principal**
 
 Lê os valores do joystick
+
 Atualiza a posição do quadrado na tela
+
 Alterna a borda do display com o SW_PIN
+
 Controla o brilho dos LEDs com PWM
+
 Aguarda 100ms e repete
 
 3️⃣ **Interrupções**
 
 **SW_PIN** → Alterna borda e LED3
+
 **BUTTON_A** → Liga/desliga LED vermelho
+
 **BUTTON_B** → Liga/desliga LED azul
